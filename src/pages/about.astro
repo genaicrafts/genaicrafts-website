@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { company } from "../data/company";
+---
+
+<BaseLayout
+  title="About"
+  description={`${company.legalName} is an independent ${company.state} studio building education apps.`}
+>
+  <article class="mx-auto max-w-3xl px-6 pt-16 pb-20 prose prose-slate">
+    <h1 class="text-4xl font-bold tracking-tight text-slate-900">About {company.shortName}</h1>
+
+    <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+      {company.legalName} is an independent studio formed in {company.formedYear} and registered
+      in {company.state}. We build mobile apps that help people get through tests
+      that actually matter — driver's permits, professional certifications, anything where
+      passing the first time saves real money and time.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-semibold text-slate-900">Our mission</h2>
+    <p class="mt-3 text-slate-600 leading-relaxed">
+      Make studying for high-stakes tests less painful. We think the test-prep category
+      has been stuck on the same tired flashcard apps for a decade. People deserve
+      better — clearer explanations, smarter review schedules, and an experience that
+      doesn't feel like a chore.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-semibold text-slate-900">How we work</h2>
+    <p class="mt-3 text-slate-600 leading-relaxed">
+      We're small on purpose. One product at a time, shipped well, maintained for years.
+      We use modern native tooling so the apps feel right on iOS and Android, and we
+      treat user data with the respect we'd want for our own.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-semibold text-slate-900">Built by</h2>
+    <p class="mt-3 text-slate-600 leading-relaxed">
+      Founded and managed by {company.manager}. Based in Chicago, working remotely
+      with collaborators around the world.
+    </p>
+
+    <h2 class="mt-12 text-2xl font-semibold text-slate-900">Company details</h2>
+    <ul class="mt-3 text-slate-600 leading-relaxed list-disc pl-6 space-y-1">
+      <li>Legal entity: {company.legalName}</li>
+      <li>State of formation: {company.state}</li>
+      <li>IL File Number: {company.ilFileNumber}</li>
+      <li>Year formed: {company.formedYear}</li>
+    </ul>
+  </article>
+</BaseLayout>

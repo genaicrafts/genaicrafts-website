@@ -1,0 +1,59 @@
+---
+import { company } from "../data/company";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-24 border-t border-slate-200 bg-slate-50">
+  <div class="mx-auto max-w-5xl px-6 py-10 grid gap-8 md:grid-cols-3 text-sm text-slate-600">
+    <div>
+      <p class="font-semibold text-slate-900">{company.legalName}</p>
+      <address class="not-italic mt-2 leading-6">
+        {company.address.line1}<br />
+        {company.address.cityStateZip}
+      </address>
+      <p class="mt-2">
+        <a class="hover:text-slate-900" href={`tel:${company.phone.href}`}>
+          {company.phone.display}
+        </a>
+      </p>
+    </div>
+
+    <div>
+      <p class="font-semibold text-slate-900">Contact</p>
+      <ul class="mt-2 space-y-1">
+        <li>
+          <a class="hover:text-slate-900" href={`mailto:${company.emails.support}`}>
+            {company.emails.support}
+          </a>
+        </li>
+        <li>
+          <a class="hover:text-slate-900" href={`mailto:${company.emails.privacy}`}>
+            {company.emails.privacy}
+          </a>
+        </li>
+        <li>
+          <a class="hover:text-slate-900" href={`mailto:${company.emails.legal}`}>
+            {company.emails.legal}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="font-semibold text-slate-900">Legal</p>
+      <ul class="mt-2 space-y-1">
+        <li><a class="hover:text-slate-900" href="/privacy">Privacy</a></li>
+        <li><a class="hover:text-slate-900" href="/terms">Terms</a></li>
+      </ul>
+      <p class="mt-4 text-xs text-slate-500">
+        IL File #{company.ilFileNumber}
+      </p>
+    </div>
+  </div>
+  <div class="border-t border-slate-200">
+    <div class="mx-auto max-w-5xl px-6 py-4 text-xs text-slate-500">
+      © {year} {company.legalName}. All rights reserved.
+    </div>
+  </div>
+</footer>

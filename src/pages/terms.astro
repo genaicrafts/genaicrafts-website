@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { company } from "../data/company";
+---
+
+<BaseLayout title="Terms" description={`Terms of use for ${company.domain}.`}>
+  <article class="mx-auto max-w-3xl px-6 pt-16 pb-20">
+    <h1 class="text-4xl font-bold tracking-tight text-slate-900">Terms of Use</h1>
+    <p class="mt-2 text-sm text-slate-500">
+      Effective date: {company.effectiveDate}
+    </p>
+
+    <div class="mt-8 space-y-6 text-slate-700 leading-relaxed">
+      <p>
+        These terms govern your use of <strong>{company.domain}</strong> — the corporate
+        website of {company.legalName} ("we", "our"). They do <strong>not</strong> govern
+        any of our mobile apps; each app has its own terms of service.
+      </p>
+
+      <h2 class="text-xl font-semibold text-slate-900">Use of the site</h2>
+      <p>
+        You may access this site for personal or business informational purposes. You
+        agree not to use the site in any way that violates applicable law or that
+        disrupts site operation (e.g., automated scraping at volume, attempts to
+        bypass security measures).
+      </p>
+
+      <h2 class="text-xl font-semibold text-slate-900">Intellectual property</h2>
+      <p>
+        All content on this site — text, layout, design, logos, and graphics — is owned
+        by {company.legalName} or its licensors and is protected by copyright and
+        trademark law. You may view and share links to pages, but you may not
+        republish substantial portions without written permission.
+      </p>
+
+      <h2 class="text-xl font-semibold text-slate-900">Links to third-party sites</h2>
+      <p>
+        This site may contain links to websites operated by others. We don't control
+        those sites and aren't responsible for their content or practices. Your use
+        of any third-party site is governed by that site's own terms.
+      </p>
+
+      <h2 class="text-xl font-semibold text-slate-900">Disclaimer of warranties</h2>
+      <p>
+        This site and its content are provided "as is" without warranties of any
+        kind, whether express or implied. To the fullest extent permitted by law, we
+        disclaim all warranties, including merchantability, fitness for a particular
+        purpose, and non-infringement.
+      </p>
+
+      <h2 class="text-xl font-semibold text-slate-900">Limitation of liability</h2>
+      <p>
+        To the fullest extent permitted by law, {company.legalName} will not be liable
+        for any indirect, incidental, special, consequential, or punitive damages
+        arising out of your use of this site.
+      </p>
+
+      <h2 class="text-xl font-semibold text-slate-900">Governing law</h2>
+      <p>
+        These terms are governed by the laws of the State of {company.state}, without
+        regard to its conflict-of-laws principles. Any dispute arising out of these
+        terms will be resolved in the state or federal courts located in
+        Cook County, {company.state}.
+      </p>
+
+      <h2 class="text-xl font-semibold text-slate-900">Changes to these terms</h2>
+      <p>
+        We may update these terms from time to time. The "Effective date" above will
+        reflect the most recent change. Your continued use of the site after a change
+        constitutes acceptance of the updated terms.
+      </p>
+
+      <h2 class="text-xl font-semibold text-slate-900">Contact</h2>
+      <address class="not-italic">
+        {company.legalName}<br />
+        {company.address.full}<br />
+        <a class="underline" href={`mailto:${company.emails.legal}`}>{company.emails.legal}</a>
+      </address>
+    </div>
+  </article>
+</BaseLayout>

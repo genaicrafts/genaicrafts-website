@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { company } from "../data/company";
+---
+
+<BaseLayout title="Privacy" description={`Privacy policy for ${company.domain}.`}>
+  <article class="mx-auto max-w-3xl px-6 pt-16 pb-20">
+    <h1 class="text-4xl font-bold tracking-tight text-slate-900">Privacy Policy</h1>
+    <p class="mt-2 text-sm text-slate-500">
+      Effective date: {company.effectiveDate}
+    </p>
+
+    <div class="mt-8 space-y-6 text-slate-700 leading-relaxed">
+      <p>
+        This privacy policy applies to <strong>{company.domain}</strong> — the corporate
+        website operated by {company.legalName}. It does <strong>not</strong> cover our
+        mobile apps; each app has its own privacy policy linked from inside the app
+        and from its product website (for {company.product.name}, see
+        <span class="font-mono">https://dmvpermitly.com/privacy</span> when published).
+      </p>
+
+      <h2 class="text-xl font-semibold text-slate-900">What this site collects</h2>
+      <p>
+        This site is a static informational website. We do not run analytics, tracking
+        pixels, or advertising scripts. We do not set cookies. We do not operate
+        contact forms; the email links on this site open your own mail client and send
+        directly to our inboxes — we don't intercept those messages.
+      </p>
+
+      <h2 class="text-xl font-semibold text-slate-900">Server logs</h2>
+      <p>
+        This site is hosted on Cloudflare Pages. As with any web host, Cloudflare
+        records standard server logs (IP address, request URL, timestamp, user agent)
+        for security, debugging, and abuse prevention. We do not link this log data to
+        any other information about you. See Cloudflare's privacy practices at
+        <a class="underline" href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a>.
+      </p>
+
+      <h2 class="text-xl font-semibold text-slate-900">When you email us</h2>
+      <p>
+        Our email is hosted by Google Workspace. When you write to one of our addresses
+        ({company.emails.support}, {company.emails.privacy}, etc.), the contents of
+        that email — and any information you include — are stored in our mailboxes so
+        we can reply and keep a record of correspondence. We retain emails as long as
+        reasonably needed for support, legal, or accounting purposes.
+      </p>
+
+      <h2 class="text-xl font-semibold text-slate-900">Your rights</h2>
+      <p>
+        Depending on where you live (e.g., EU/UK, California, Illinois), you may have
+        rights to access, correct, or delete personal data we hold about you. To make
+        a request, email
+        <a class="underline" href={`mailto:${company.emails.privacy}`}>{company.emails.privacy}</a>.
+        We'll verify your identity and respond within the timeframe required by
+        applicable law.
+      </p>
+
+      <h2 class="text-xl font-semibold text-slate-900">Children</h2>
+      <p>
+        This site is not directed to children under 13. We do not knowingly collect
+        personal information from children. If you believe a child has provided us
+        with personal information, please contact us and we'll delete it.
+      </p>
+
+      <h2 class="text-xl font-semibold text-slate-900">Changes to this policy</h2>
+      <p>
+        We'll update the "Effective date" above when this policy changes. Material
+        changes will be highlighted on this page for a reasonable period.
+      </p>
+
+      <h2 class="text-xl font-semibold text-slate-900">Contact</h2>
+      <address class="not-italic">
+        {company.legalName}<br />
+        {company.address.full}<br />
+        <a class="underline" href={`mailto:${company.emails.privacy}`}>{company.emails.privacy}</a>
+      </address>
+    </div>
+  </article>
+</BaseLayout>
